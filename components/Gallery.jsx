@@ -1,3 +1,4 @@
+import Image from 'next/image';
 
 export default function Gallery() {
     const images = [
@@ -22,10 +23,13 @@ export default function Gallery() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {images.map((img, index) => (
                         <div key={index} className={`relative overflow-hidden rounded-xl group h-64 md:h-80 ${index === 0 || index === 3 ? 'md:col-span-2' : ''}`}>
-                            <div
-                                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                                style={{ backgroundImage: `url(${img.src})` }}
-                            ></div>
+                            <Image 
+                                src={img.src} 
+                                alt={img.alt} 
+                                fill 
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw" 
+                                className="object-cover object-center transition-transform duration-700 group-hover:scale-110" 
+                            />
                             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
                         </div>
                     ))}

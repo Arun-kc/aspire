@@ -48,10 +48,9 @@ export default function TrainerModal() {
                         >
                             {/* Image Side */}
                             <div className="relative h-64 md:h-auto overflow-hidden shrink-0">
-                                <div
-                                    className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform hover:scale-105 duration-700"
-                                    style={{ backgroundImage: "url('/trainer.jpg')" }}
-                                ></div>
+                                <div className="absolute inset-0 transition-transform hover:scale-105 duration-700">
+                                    <Image src="/trainer.jpg" alt="Master Trainer" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" />
+                                </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent md:bg-gradient-to-r"></div>
                                 <div className="absolute bottom-4 left-4 text-white p-4">
                                     <p className="font-heading text-4xl font-bold text-primary">MASTER</p>

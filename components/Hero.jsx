@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
     return (
@@ -14,8 +15,10 @@ export default function Hero() {
                         initial={{ scale: 1.1, opacity: 0 }}
                         animate={{ scale: 1, opacity: 0.5 }}
                         transition={{ duration: 1.5 }}
-                        className="absolute inset-0 bg-[url('/hero-real.jpg')] bg-cover bg-center bg-no-repeat contrast-125"
-                    ></motion.div>
+                        className="absolute inset-0 contrast-125"
+                    >
+                        <Image src="/hero-real.jpg" alt="Aspire Fitness Background" fill priority className="object-cover object-center" sizes="100vw" />
+                    </motion.div>
                 </div>
             </div>
 
